@@ -118,5 +118,14 @@ La arquitectura llega a modelos y plantea modelos haciendo un estudio fuerte de 
 
 <figure>
 <img src='./assets/amazon.png' alt='Amazon Arquitecture'/>
-<figcaption>Ejemplo de parte de la arquitectura de Amazon.</figcaption>
+<figcaption>Ejemplo de un sistema de despliegue en AWS.</figcaption>
 </figure>
+
+**Nota:** Amazon se preocupa por la vista arquitectónica que tiene que ver con el despliegue de la aplicación.
+
+<figure>
+<img src='./assets/flux.png' alt='Flux Arquitecture'/>
+<figcaption>Ejemplo de la arquitectura de Flux. Aplicación Frontend de React, en éste diagrama puedes observar como Flux se concentra en mostra el flujo de datos, cual va a ser la conexión entre diferentes módulos y como los datos van a viajar de un módulo a otro, particularmente en Flux, en una sola dirección.</figcaption>
+</figure>
+
+Todos estos diagramas hablan de alguna forma a alto nivel de un sistema de software, y lo particular es que cada de estos diagramas muestra una vista diferente, arquitectónicamente relevante, pero diferente a la hora de evaluar los criterios o atributos de calidad del software, por ejemplo, en Flux vemos que es importante el flujo de datos, mientras que para Amazon es importante la disponibilidad y distribución de carga de la aplicación, todo esto es importante a la hora de decidir una arquitectura.
