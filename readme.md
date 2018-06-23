@@ -129,3 +129,82 @@ La arquitectura llega a modelos y plantea modelos haciendo un estudio fuerte de 
 </figure>
 <br/>
 Todos estos diagramas hablan de alguna forma a alto nivel de un sistema de software, y lo particular es que cada de estos diagramas muestra una vista diferente, arquitectónicamente relevante, pero diferente a la hora de evaluar los criterios o atributos de calidad del software, por ejemplo, en Flux vemos que es importante el flujo de datos, mientras que para Amazon es importante la disponibilidad y distribución de carga de la aplicación, todo esto es importante a la hora de decidir una arquitectura.
+
+**Comunicación**
+
+Una empresa va a poder crear equipos o estructuras, que imiten la comunicación de su propia aplicación.
+
+*Comunicación monolítica*: Existen un solo equipo de comunicación.
+
+*Comunicación distribuida*: Existen múltiples equipos de comunicación.
+
+**Objetivos del arquitecto**
+
+**Stakeholders (partes interesadas)** 
+
+* Cliente
+* Manager 
+* Dev 
+* Usuario
+* QA o tester.
+
+Cada rol va a tener diferentes requerimientos, y cada requerimiento va a afectar al sistema. La unión de todos estos requerimientos, ya sea funcionales o no funcionales, van a llevar al arquitecto a tomar decisiones que impacten en el sistema. 
+
+**Arquitectura y metodologías**
+
+
+*Metodologías tradicionales:* Las decisiones de arquitectura son tomadas en la etapa de diseño.
+
+*Metodologías ágiles:* Las decisiones de arquitectura son tomadas cada feedback o cada sprint (c/u de las iteraciones en las metodologías ágiles).
+
+**Entender el problema**
+
+Es muy importante entender el problema que estamos resolviendo, lo más importante es separar la comprensión del problema de la propuesta de solución, cuando no separamos esto vemos como parte del problema a resolver ciertas cuestiones tecnologícas como la plataforma o la arquitectura general de la soluciones, o estilos a implementar, cuando en realidad son detalles de implementación.
+
+¿**Cómo entender bien un problema?**
+
+Separemos el espacio del problema y el espacio de la solución,
+
+*Espacio del problema:* Idea, criterios de éxito, historias de usuario.
+
+*Espacio de la solución:* Diseño, desarrollo, evaluación, criterios de adaptación, despliegue.
+
+**Requerimientos**
+
+*Requerimientos del producto:*
+   * Capa de requerimientos negocio: Consta de reglas de negocios que van a alimentar estos requerimientos de negocios. Por ejemplo, cuando hablamos de Airbnb y encontramos que Airbnb quiere hospedar, una regla de negocios podría ser que el sistema necesita tener diferentes tipos de usuarios, donde tienes al usuario que brinda hospedaje y al usuario que utiliza ese hospedaje.
+
+   * Capa de requerimientos de usuario: Tienen que ver con como el usuario se puede desenvolver utilizando el sistema, estos requerimientos de usuario tienen también que ver con los atributos de calidad, es decir, con que atributos específicos del sistema nos importan sobre otros. Por ejemplo si en Airbnb nos interesa proteger al usuario que ofrece hospedaje, entonces ese usuario va a tener un requerimiento de usuario donde va a necesitar ciertas seguridades, como la identidad de la persona, un pago anticipado, y todo esto va a impactar en requerimientos no funcionales, que sería la seguridad del sistema, las garantias que el sistema le da al usuario de que el atributo de calidad (la seguridad) está siendo enfatizado.
+   
+   * Capa de requerimientos funcionales: Se alimentan de los requerimientos anteriores, para bajar a tierra que es lo que se debe hacer específicamente, ya no estamos hablando de una historia genérica o de un valor de negocio que tiene que ver con la estrategia general de nuestra empresa, hablamos puntualmente de que se debe hacer en el sistema para implementar esta funcionabilidad, los requerimientos funcionales también se ven alimentados por requerimientos de sistema, es decir, que cosas tienen que poder pasar operativamente, por ejemplo, que el sistema pueda cobrar automáticamente a una tarjeta de crédito luego de confirmado un pago, o que un administrador pueda contactarse de manera directa con un huesped o quien ofrece hospedaje. Esta capa también va a ser afectada por las restricciones que tienen que ver con lo funcional, si vamos a desarrollar una aplicación web, tendremos restricciones de comunicación y de como interactua nuestro usuario con la aplicación que tienen que ver con el mundo del internet. No es algo que pasaría por ejemplo con una aplicación mobil, la aplicación mobil puede ser utilizada desde el celular sin necesidad de conectarse a internet en un principio, luego en algún momento podrá conectarse a internet para hacer conexión con algun servidor remoto. 
+   Todo esto tiene que ver con las restricciones contextuales de estos requerimientos, entonces si un requerimiento es que aplicación pueda utilizarse de manera remota a través de internet eso afectará la implementación de los requerimientos funcionales, de los requerimientos de usuario y de los requerimientos de sistems.
+
+   * Requerimientos funcionales: Detallan como el sistema se comporta bajo un estímulo. Por ejemplo, si como usuario registrado quiero ingresar al sistema para tener una experiencia personalizada.
+
+   * Requerimientos no funcionales: Agregan un atributo de calidad. Por ejemplo, si como usuario registrado quiero ingresar al sistema de forma segura para tener una experiencia personalizada.
+
+*Requerimientos de proyecto:*
+   - Recursos
+
+   - Capacitación
+
+   - Certificaciones
+
+   - Documentación de usuario
+
+   - Infraestructura
+
+   - Licencias
+
+   - Plan de despliegue
+
+   - Plan de transición
+
+   - Acuerdos de servicio
+
+Son requerimientos que entran sobre todo en la responsabilidad del gestor del proyecto, sin embargo, el arquitecto debe estar atento a estos requerimientos, y trabajar en conjunto con el gestor del proyecto para entender y priorizar los requerimientos de proyecto con los requerimientos de producto. Si necesitaramos obtener recursos, como disponibilidad de servidores, estaciones de trabajo para los desarrolladores, o incluso algún espacio para cierta actividad, el gestor va a encargarse de estos requerimientos, sin embargo el arquitecto no tendría mucho que ver con ello. Existen algunos requerimientos de proyecto que van a afectar el desarrollo del sistema, sobre todo por tener que tomar decisiones que quizás nos gustaría de entrar a un nivel de más detalle pero que por restricciones de tiempo, o restricciones de número de personal, o incluso restricciones de capacitación o entrenamiento no podemos tomar en el momento en que nos gustaría, en ese momento un arquitecto puede decidir que con el equipo con el que cuenta y las prioridades de negocio que tiene actualmente una arquitectura temporalmente para luego evolucionarla, ya que el requerimiento de proyecto es prioritario, por ejemplo si debemos presentar un beta del proyecto y contar una muestra disponible, sin eso el negocio podría caerse, entonces no podemos priorizar algunos atributos de calidad de arquitectura dejando de un lado la importancia del requerimiento de proyecto. 
+
+Estos dos mundos de requerimientos hablan de las prioridades de nuestro proyecto, el arquitecto junto al gestor deben trabajar sobre eso. En metodologías ágiles en general van a trabajar sobre el backlog del sprint o lista de tareas de la iteración.
+
+
+*Requerimientos significativos para la arquitectura:* Hablan de cualquier tipo de requerimiento que afecten a la hora de diseñar la arquitectura correcta.
