@@ -208,3 +208,7 @@ Estos dos mundos de requerimientos hablan de las prioridades de nuestro proyecto
 
 
 *Requerimientos significativos para la arquitectura:* Hablan de cualquier tipo de requerimiento que afecten a la hora de diseñar la arquitectura correcta.
+
+**Estilo de Arquitectura**
+
+Colección de decisiones de diseño, aplicables en un contexto determinado, que restringen las decisiones arquitectónicas específicas en ese contexto y obtienene beneficios en cada sistema resultante.
